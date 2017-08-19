@@ -16,6 +16,25 @@ int CountOne(int n)
     return count;
 }
 
+/*
+===----- Second Method -------===
+Note we have the desirable property that: n = (n - 1) & n will make the last 1
+n as 0
+e.g.: n = 5, i.e. n = 101, then n & (n - 1) = 100
+*/
+
+int CountOneSecondMethod(int n)
+{
+    int count = 0;
+    while(n) {
+	count++;
+	n = n & (n - 1);
+    }
+    return count;
+}
+
+
+
 int main()
 {
     int n = 0;
